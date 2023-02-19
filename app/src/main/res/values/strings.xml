@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">DigiPermission</string>
-    <string name="camera">Camera</string>
-    <string name="read_call_phone">Read Call Phone</string>
-    <string name="contact">Contact</string>
+    <string name="app_name">Digi-Permission</string>
+    <string name="internet">Internet</string>
+    <string name="location_blue_blue_admin">Location, Bluetooth, Bluetooth Admin</string>
 </resources>
