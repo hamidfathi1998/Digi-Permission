@@ -20,7 +20,7 @@ class PermissionIntermediary {
         this.fragment = fragment
     }
 
-    fun permissions(permissions: List<String>): PermissionBuilder {
+    fun addPermissions(permissions: List<String>): PermissionBuilder {
         val normalPermissionSet = LinkedHashSet<String>()
         val specialPermissionSet = LinkedHashSet<String>()
         val osVersion = Build.VERSION.SDK_INT
@@ -46,6 +46,6 @@ class PermissionIntermediary {
         return PermissionBuilder(activity, fragment, normalPermissionSet, specialPermissionSet)
     }
 
-    fun permissions(vararg permissions: String): PermissionBuilder = permissions(listOf(*permissions))
+    fun addPermissions(vararg permissions: String): PermissionBuilder = addPermissions(listOf(*permissions))
 
 }

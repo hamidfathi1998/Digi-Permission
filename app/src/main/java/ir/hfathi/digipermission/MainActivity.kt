@@ -16,11 +16,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val digiPermission = DigiPermission.init(this)
         binding.btnThreePermission.setOnClickListener {
-            DigiPermission.init(this)
-                .permissions(ACCESS_FINE_LOCATION, BLUETOOTH, BLUETOOTH_ADMIN)
-                .request { allGranted, grantedList, deniedList ->
+            DigiPermission.initialize(this)
+                .addPermissions(ACCESS_FINE_LOCATION, BLUETOOTH, BLUETOOTH_ADMIN)
+                .permissionResult { allGranted, grantedList, deniedList ->
                     if (allGranted) {
                         Toast.makeText(
                             this,
@@ -37,9 +36,9 @@ class MainActivity : AppCompatActivity() {
                 }
         }
         binding.btnInternet.setOnClickListener {
-            digiPermission
-                .permissions(INTERNET)
-                .request { allGranted, grantedList, deniedList ->
+            DigiPermission.initialize(this)
+                .addPermissions(INTERNET)
+                .permissionResult { allGranted, grantedList, deniedList ->
                     if (allGranted) {
                         Toast.makeText(
                             this,

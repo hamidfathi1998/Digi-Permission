@@ -9,9 +9,9 @@ import androidx.fragment.app.FragmentActivity
 
 object DigiPermission {
 
-    fun init(activity: FragmentActivity): PermissionIntermediary = PermissionIntermediary(activity)
+    fun initialize(activity: FragmentActivity): PermissionIntermediary = PermissionIntermediary(activity)
 
-    fun init(fragment: Fragment): PermissionIntermediary = PermissionIntermediary(fragment)
+    fun initialize(fragment: Fragment): PermissionIntermediary = PermissionIntermediary(fragment)
 
     fun isGranted(context: Context, permission: String): Boolean = ContextCompat.checkSelfPermission(
         context,

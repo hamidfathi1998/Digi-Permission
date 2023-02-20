@@ -44,9 +44,9 @@ For example. If you want to request ACCESS_FINE_LOCATION, BLUETOOTH, BLUETOOTH_A
 Then you can use below codes to request.
 
 ```kotlin
-DigiPermission.init(this)
-    .permissions(ACCESS_FINE_LOCATION, BLUETOOTH, BLUETOOTH_ADMIN)
-    .request { allGranted, grantedList, deniedList ->
+DigiPermission.initialize(this)
+    .addPermissions(ACCESS_FINE_LOCATION, BLUETOOTH, BLUETOOTH_ADMIN)
+    .permissionResult { allGranted, grantedList, deniedList ->
         if (allGranted) {
             Toast.makeText(
                 this,

@@ -65,7 +65,7 @@ class PermissionBuilder(
     val targetSdkVersion: Int
         get() = activity.applicationInfo.targetSdkVersion
 
-    fun request(callback: RequestCallback?) {
+    fun permissionResult(callback: RequestCallback?) {
         requestCallback = callback
         startRequest()
     }
